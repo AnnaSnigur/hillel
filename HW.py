@@ -7,9 +7,8 @@ app = Flask("app")
 
 @app.route("/")
 def requirements():
-    f = open("requirements.txt")
-    content = f.read()
-    f.close()
+    with open("requirements.txt") as f:
+        content = f.read()
     return content
 
 
@@ -21,8 +20,8 @@ def faker():
 
 @app.route("/file")
 def file():
-    f = open("hw.csv")
-    content = f.read()
+    with open("hw.csv") as f:
+        content = f.read()
     content = content.split("\n")[1:]
     number = 0
     height_sum = 0
