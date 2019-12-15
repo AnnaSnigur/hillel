@@ -45,3 +45,4 @@ def kosmos():
     kosmos = requests.get("http://api.open-notify.org/astros.json")
     p = kosmos.text
     return p.count("name")
+
